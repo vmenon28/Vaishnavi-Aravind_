@@ -1,0 +1,93 @@
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE.CSS — Mobile & tablet breakpoints
+   ═══════════════════════════════════════════════════ */
+
+/* ── TABLET ── */
+@media (max-width: 768px) {
+  /* Timeline goes single-column */
+  .timeline-line { left: 24px; }
+  .timeline-item { flex-direction: column !important; padding-left: 60px; }
+  .tl-dot { left: 24px; top: 0; transform: none; }
+  .tl-card { width: 100% !important; margin: 12px 0 0 0 !important; text-align: left !important; }
+
+  /* Couple side by side → stack */
+  .couple-wrapper { flex-direction: column; align-items: center; gap: 10px; }
+  .couple-divider { padding-bottom: 0; padding: 10px 0; }
+  .divider-svg { transform: rotate(90deg); width: 120px; height: 50px; }
+
+  /* Invitation card padding */
+  .invitation-card { padding: 36px 22px; }
+  .inv-details { flex-direction: column; align-items: center; gap: 16px; }
+
+  /* Events grid */
+  .events-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Moments grid */
+  .moments-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Countdown */
+  .countdown-grid { gap: 12px; }
+  .countdown-card { width: clamp(70px, 20vw, 110px); padding: 18px 8px 14px; }
+
+  /* Hero names */
+  .hero-names { line-height: 1.05; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 480px) {
+  /* Cursor hidden on touch */
+  .cursor, .cursor-trail { display: none; }
+  body { cursor: auto; }
+  .open-invitation-btn, .directions-btn, .event-card, .moment-card, .music-btn { cursor: pointer; }
+
+  /* Hero adjustments */
+  .hero-content { padding: 0 16px; }
+  .open-invitation-btn { padding: 12px 24px; font-size: 0.72rem; }
+
+  /* Events grid single col */
+  .events-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .event-card { padding: 24px 14px; }
+
+  /* Moments 2 col */
+  .moments-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  /* Countdown 2×2 */
+  .countdown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 300px; }
+  .countdown-card { width: 100%; }
+
+  /* Invitation card */
+  .invitation-card { padding: 28px 16px; }
+  .inv-names-block { gap: 2px; }
+
+  /* Scratch card */
+  .scratch-card-container { width: 100%; height: 230px; }
+  .scratch-canvas { width: 100%; height: 100%; }
+
+  /* Timeline */
+  .timeline-item { padding-left: 48px; }
+  .tl-dot { width: 34px; height: 34px; font-size: 0.9rem; }
+  .tl-card { padding: 14px 16px; }
+  .tl-card h3 { font-size: 1.3rem; }
+
+  /* Music player */
+  .music-player { bottom: 16px; right: 16px; }
+
+  /* Sections spacing */
+  section { padding: 50px 16px; }
+  .section-header { margin-bottom: 36px; }
+}
+
+/* ── LARGE SCREENS ── */
+@media (min-width: 1200px) {
+  .events-grid { grid-template-columns: repeat(4, 1fr); }
+  .moments-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
